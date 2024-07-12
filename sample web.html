@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matthew Ospina's Personal Webpage</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #121212;
@@ -17,6 +18,7 @@
             color: #BB86FC;
             padding: 20px;
             text-align: center;
+            font-family: 'Poppins', sans-serif;
         }
         nav {
             display: flex;
@@ -28,6 +30,7 @@
             color: #BB86FC;
             margin: 0 15px;
             text-decoration: none;
+            font-family: 'Poppins', sans-serif;
         }
         nav a:hover {
             text-decoration: underline;
@@ -37,18 +40,18 @@
             max-width: 1000px;
             margin: auto;
         }
-        .about {
+        .about, .portfolio, .project {
             background-color: #242424;
             border-radius: 10px;
             padding: 20px;
             margin-bottom: 40px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-family: 'Poppins', sans-serif;
         }
-        .portfolio {
-            background-color: #242424;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        .about:hover, .portfolio:hover, .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
         }
         footer {
             background-color: #1F1B24;
@@ -58,13 +61,6 @@
             position: fixed;
             bottom: 0;
             width: 100%;
-        }
-        .project {
-            background-color: #2E2C36;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
@@ -85,20 +81,34 @@
         <h2>Portfolio</h2>
         <p>Here are some of my cybersecurity projects:</p>
         <div class="project">
-            <h3>Project 1: Network Security Analysis</h3>
-            <p>Description of the project and what was achieved.</p>
+            <h3>Project 1: Use Metasploit to exploit MS17-010</h3>
+            <p>Using Kali Linux to exploit the EternalBlue Vulnerability on a windows 7 machine.</p>
         </div>
         <div class="project">
-            <h3>Project 2: Web Application Penetration Testing</h3>
-            <p>Description of the project and what was achieved.</p>
+            <h3>Project 2: Google Dorking for Sensitive Information</h3>
+            <p>Use google dorking to perform OSINT and find sensitive information.</p>
         </div>
         <div class="project">
-            <h3>Project 3: Incident Response Plan</h3>
-            <p>Description of the project and what was achieved.</p>
+            <h3>Project 3: Perform A Vulnerability Scan With OpenVAS</h3>
+            <p>Perform A Vulnerability Scan With OpenVAS on a Windows XP, Windows 10, and Linux distribution machine.</p>
         </div>
     </section>
     <footer>
         <p>&copy; 2024 Matthew Ospina. All rights reserved.</p>
     </footer>
+    <script>
+        // JavaScript to add hover effect for project links
+        document.querySelectorAll('.project').forEach((project, index) => {
+            project.style.cursor = 'pointer';
+            project.addEventListener('click', () => {
+                const urls = [
+                    'https://youtu.be/jQ0D-kwlOyc', // Replace with your YouTube video URL for Project 1
+                    'https://youtu.be/x5jap-9D3Qg', // Replace with your YouTube video URL for Project 2
+                    'https://youtu.be/hLE8j0b0C1I'  // Replace with your YouTube video URL for Project 3
+                ];
+                window.open(urls[index], '_blank');
+            });
+        });
+    </script>
 </body>
 </html>
